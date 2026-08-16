@@ -1,0 +1,269 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  EDITOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum CategoryType {
+  ATTRACTION
+  EXPERIENCE
+  EVENT
+  STORY
+  ACCOMMODATION
+}
+
+model User {
+  id        String      @id @default(uuid())
+  email     String      @unique
+  password  String
+  name      String
+  role      Role        @default(USER)
+  avatar    String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  savedItems SavedItem[]
+  itineraries Itinerary[]
+
+  @@map("users")
+}
+
+model Category {
+  id          String       @id @default(uuid())
+  name        String
+  slug        String       @unique
+  type        CategoryType
+  icon        String?
+  description String?
+  
+  attractions  Attraction[]
+  experiences  Experience[]
+
+  @@map("categories")
+}
+
+model Destination {
+  id                  String        @id @default(uuid())
+  name                String
+  slug                String        @unique
+  shortDescription    String
+  description         String        @db.Text
+  region              String        // Western, Southern, Central, Cultural Triangle, Eastern, Northern, Wildlife
+  province            String
+  district            String
+  latitude            Float
+  longitude           Float
+  heroImage           String
+  gallery             String[]
+  videoUrl            String?
+  bestTimeToVisit     String        // e.g. "December to April"
+  recommendedDuration String        // e.g. "2 - 3 Days"
+  averageTemperature  String        // e.g. "27°C"
+  gettingThere        String        @db.Text
+  featured            Boolean       @default(false)
+  status              ContentStatus @default(PUBLISHED)
+  seoTitle            String?
+  seoDescription      String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  attractions    Attraction[]
+  experiences    Experience[]
+  events         Event[]
+  accommodations Accommodation[]
+  itineraryDays  ItineraryDay[]
+
+  @@map("destinations")
+}
+
+model Attraction {
+  id                  String        @id @default(uuid())
+  name                String
+  slug                String        @unique
+  destinationId       String
+  destination         Destination   @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  categoryId          String?
+  category            Category?     @relation(fields: [categoryId], references: [id])
+  description         String        @db.Text
+  latitude            Float
+  longitude           Float
+  heroImage           String
+  gallery             String[]
+  openingHours        String?
+  recommendedDuration String?
+  bestTime            String?
+  entryInformation    String?
+  featured            Boolean       @default(false)
+  status              ContentStatus @default(PUBLISHED)
+  seoTitle            String?
+  seoDescription      String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@map("attractions")
+}
+
+model Experience {
+  id            String        @id @default(uuid())
+  name          String
+  slug          String        @unique
+  categoryId    String?
+  category      Category?     @relation(fields: [categoryId], references: [id])
+  destinationId String
+  destination   Destination   @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  description   String        @db.Text
+  duration      String
+  difficulty    String?       // Easy, Moderate, Challenging
+  bestSeason    String
+  heroImage     String
+  gallery       String[]
+  latitude      Float
+  longitude     Float
+  status        ContentStatus @default(PUBLISHED)
+  featured      Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("experiences")
+}
+
+model Event {
+  id            String        @id @default(uuid())
+  title         String
+  slug          String        @unique
+  description   String        @db.Text
+  startDate     DateTime
+  endDate       DateTime
+  destinationId String
+  destination   Destination   @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  venue         String
+  latitude      Float
+  longitude     Float
+  heroImage     String
+  category      String
+  status        ContentStatus @default(PUBLISHED)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("events")
+}
+
+model Story {
+  id             String        @id @default(uuid())
+  title          String
+  slug           String        @unique
+  summary        String        @db.Text
+  content        String        @db.Text
+  category       String
+  author         String        @default("Visit Sri Lanka Editorial")
+  readTime       String        @default("5 min read")
+  heroImage      String
+  status         ContentStatus @default(PUBLISHED)
+  featured       Boolean       @default(false)
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@map("stories")
+}
+
+model Accommodation {
+  id            String        @id @default(uuid())
+  name          String
+  slug          String        @unique
+  destinationId String
+  destination   Destination   @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  type          String        // Resort, Boutique, Villa, Guesthouse, Hostel, Eco Lodge
+  priceRange    String        // $, $$, $$$, $$$$
+  rating        Float         @default(4.5)
+  heroImage     String
+  address       String
+  latitude      Float
+  longitude     Float
+  amenities     String[]
+  bookingUrl    String?
+  status        ContentStatus @default(PUBLISHED)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("accommodations")
+}
+
+model Itinerary {
+  id             String         @id @default(uuid())
+  userId         String?
+  user           User?          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title          String
+  slug           String         @unique
+  description    String         @db.Text
+  durationDays   Int
+  pace           String         @default("Balanced") // Relaxed, Balanced, Fast
+  style          String         @default("Comfort")  // Budget, Comfort, Premium, Luxury
+  targetAudience String         @default("All")      // Solo, Couple, Family, Friends
+  isPublic       Boolean        @default(true)
+  heroImage      String
+  status         ContentStatus  @default(PUBLISHED)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  days ItineraryDay[]
+
+  @@map("itineraries")
+}
+
+model ItineraryDay {
+  id            String          @id @default(uuid())
+  itineraryId   String
+  itinerary     Itinerary       @relation(fields: [itineraryId], references: [id], onDelete: Cascade)
+  dayNumber     Int
+  title         String
+  description   String          @db.Text
+  destinationId String?
+  destination   Destination?    @relation(fields: [destinationId], references: [id])
+  
+  items         ItineraryItem[]
+
+  @@map("itinerary_days")
+}
+
+model ItineraryItem {
+  id             String       @id @default(uuid())
+  itineraryDayId String
+  itineraryDay   ItineraryDay @relation(fields: [itineraryDayId], references: [id], onDelete: Cascade)
+  title          String
+  itemType       String       // ATTRACTION, EXPERIENCE, FOOD, ACCOMMODATION, TRANSPORT
+  activityTime   String?      // Morning, Afternoon, Evening, Full Day
+  estimatedCost  String?      // e.g. "$15" or "Free"
+  notes          String?
+  orderIndex     Int          @default(0)
+
+  @@map("itinerary_items")
+}
+
+model SavedItem {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemType  String   // DESTINATION, ATTRACTION, EXPERIENCE, EVENT, STORY, ITINERARY
+  itemId    String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, itemType, itemId])
+  @@map("saved_items")
+}

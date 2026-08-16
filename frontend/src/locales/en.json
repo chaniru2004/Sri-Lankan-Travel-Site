@@ -1,0 +1,48 @@
+{
+  "brandName": "Visit Sri Lanka",
+  "tagline": "One Island. A Thousand Journeys.",
+  "nav": {
+    "whySriLanka": "Why Sri Lanka",
+    "destinations": "Destinations",
+    "thingsToDo": "Things to Do",
+    "natureAdventure": "Nature & Adventure",
+    "planTrip": "Plan Your Trip",
+    "events": "Events",
+    "stories": "Stories",
+    "map": "Map",
+    "stay": "Accommodation",
+    "food": "Taste Sri Lanka",
+    "whenToVisit": "Sri Lanka 365",
+    "saved": "Saved",
+    "planMyTrip": "Plan My Trip"
+  },
+  "hero": {
+    "headline": "Discover Sri Lanka",
+    "subtitle": "One Island. A Thousand Journeys.",
+    "exploreBtn": "Explore Sri Lanka",
+    "planBtn": "Plan Your Trip",
+    "searchPlaceholder": "Where would you like to explore? (e.g. Ella, Sigiriya, Yala)"
+  },
+  "why": {
+    "title": "Why Sri Lanka?",
+    "subtitle": "An island carved by 2,500 years of royal heritage, emerald jungles, and warm ocean tides."
+  },
+  "destinations": {
+    "title": "Places Worth the Journey",
+    "subtitle": "From ancient rock fortresses to misty highlands and wild leopard sanctuaries.",
+    "viewDestination": "Explore Destination",
+    "allRegions": "All Regions",
+    "grid": "Grid View",
+    "map": "Map View"
+  },
+  "planner": {
+    "title": "Craft Your Sri Lankan Itinerary",
+    "subtitle": "Tell us your travel dates, pace, and passions. Our smart planner creates your perfect day-by-day journey.",
+    "step1": "When are you visiting?",
+    "step2": "Who is travelling?",
+    "step3": "What do you love?",
+    "step4": "Travel Style",
+    "step5": "Travel Pace",
+    "generate": "Generate Itinerary"
+  }
+}

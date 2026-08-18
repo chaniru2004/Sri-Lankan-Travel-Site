@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { Search, MapPin, Bookmark, ArrowRight, Grid, Map as MapIcon, Filter } from 'lucide-react';
+import { Search, Bookmark, ArrowRight, Grid, Map as MapIcon } from 'lucide-react';
 import { api } from '@/lib/api';
 import { useSaved } from '@/app/providers';
 
@@ -82,31 +82,31 @@ export default function DestinationsPage() {
   }, [selectedFilter, search]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-8 text-ceylon-950">
       {/* Header Banner */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
+        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-600">
           Destination Discovery
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Explore Sri Lanka’s Iconic Places
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           From ancient 5th-century granite fortresses to foggy tea plantation peaks and turquoise coastal bays.
         </p>
       </div>
 
       {/* Filter Toolbar */}
-      <div className="glass-panel rounded-2xl p-4 border border-ceylon-500/30 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-white rounded-2xl p-4 border border-ceylon-500/20 shadow-xl shadow-ceylon-900/10 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Search */}
         <div className="relative w-full md:w-80">
-          <Search className="w-4 h-4 text-ceylon-400 absolute left-3 top-3" />
+          <Search className="w-4 h-4 text-ceylon-600 absolute left-3 top-3" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Sigiriya, Ella, Galle..."
-            className="w-full bg-ceylon-950/80 border border-ceylon-500/30 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-sand-200/50 focus:outline-none focus:border-ceylon-400"
+            className="w-full bg-ceylon-50 border border-ceylon-500/25 rounded-xl pl-9 pr-4 py-2 text-xs text-ceylon-950 placeholder-ceylon-700/50 focus:outline-none focus:border-ceylon-500 focus:ring-2 focus:ring-ceylon-500/15"
           />
         </div>
 
@@ -116,7 +116,7 @@ export default function DestinationsPage() {
             <button
               key={reg}
               onClick={() => setSelectedFilter(reg)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedFilter === reg ? 'bg-ceylon-500 text-white shadow-md' : 'glass-card text-sand-200 hover:text-white'}`}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedFilter === reg ? 'bg-ceylon-600 text-white shadow-md shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
             >
               {reg}
             </button>
@@ -124,19 +124,19 @@ export default function DestinationsPage() {
         </div>
 
         {/* View Toggle */}
-        <div className="flex items-center space-x-1 glass-card p-1 rounded-xl">
+        <div className="flex items-center space-x-1 bg-ceylon-50 border border-ceylon-500/20 p-1 rounded-xl">
           <button
             onClick={() => setViewMode('grid')}
-            className={`p-2 rounded-lg text-xs font-medium flex items-center space-x-1 ${viewMode === 'grid' ? 'bg-ceylon-600 text-white' : 'text-sand-200'}`}
+            className={`p-2 rounded-lg text-xs font-medium flex items-center space-x-1 ${viewMode === 'grid' ? 'bg-ceylon-600 text-white' : 'text-ceylon-700 hover:text-ceylon-950'}`}
           >
             <Grid className="w-4 h-4" />
             <span className="hidden sm:inline">Grid</span>
           </button>
           <Link
             href="/map"
-            className="p-2 rounded-lg text-xs font-medium flex items-center space-x-1 text-sand-200 hover:text-white"
+            className="p-2 rounded-lg text-xs font-medium flex items-center space-x-1 text-ceylon-700 hover:text-ceylon-950"
           >
-            <MapIcon className="w-4 h-4 text-gold-400" />
+            <MapIcon className="w-4 h-4 text-ceylon-600" />
             <span className="hidden sm:inline">Map</span>
           </Link>
         </div>
@@ -146,13 +146,13 @@ export default function DestinationsPage() {
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-80 rounded-2xl bg-ceylon-900/40 animate-pulse" />
+            <div key={i} className="h-80 rounded-2xl bg-ceylon-100 animate-pulse" />
           ))}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {destinations.map((dest: any) => (
-            <div key={dest.id} className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between h-96 group relative">
+            <div key={dest.id} className="bg-white border border-ceylon-500/20 shadow-xl shadow-ceylon-900/10 rounded-2xl overflow-hidden flex flex-col justify-between min-h-96 group relative transition hover:-translate-y-1 hover:shadow-ceylon-900/15">
               <div className="relative h-56 w-full overflow-hidden">
                 <Image
                   src={dest.heroImage}
@@ -173,19 +173,19 @@ export default function DestinationsPage() {
 
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
-                  <h3 className="font-playfair text-2xl font-bold text-white group-hover:text-ceylon-300 transition">
+                  <h3 className="font-playfair text-2xl font-bold text-ceylon-950 group-hover:text-ceylon-600 transition">
                     {dest.name}
                   </h3>
-                  <p className="text-xs text-sand-200 mt-1 line-clamp-2">
+                  <p className="text-xs text-ceylon-700 mt-1 line-clamp-2">
                     {dest.shortDescription}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-ceylon-500/10 text-xs">
-                  <span className="text-sand-200/80">{dest.bestTimeToVisit}</span>
+                  <span className="text-ceylon-700">{dest.bestTimeToVisit}</span>
                   <Link
                     href={`/destinations/${dest.slug}`}
-                    className="inline-flex items-center space-x-1 font-semibold text-gold-400 hover:text-gold-300 uppercase tracking-wider"
+                    className="inline-flex items-center space-x-1 font-semibold text-ceylon-600 hover:text-ceylon-800 uppercase tracking-wider"
                   >
                     <span>View Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />

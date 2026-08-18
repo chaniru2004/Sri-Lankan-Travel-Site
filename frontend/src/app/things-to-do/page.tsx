@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Compass, Waves, Mountain, Landmark, Utensils, Heart, Camera, Sun, ArrowRight, Bookmark } from 'lucide-react';
+import { Compass, Waves, Mountain, Landmark, Utensils, Heart, ArrowRight, Bookmark } from 'lucide-react';
 import { api } from '@/lib/api';
 import { useSaved } from '@/app/providers';
 
@@ -34,15 +34,15 @@ export default function ThingsToDoPage() {
   }, [selectedCat]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12 pb-20 text-ceylon-950">
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
+        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-600">
           Curated Experiences
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Things to Do in Sri Lanka
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           Immerse yourself in authentic island moments — from tracking wild leopards to sipping fresh Ceylon tea atop misty ridges.
         </p>
       </div>
@@ -51,7 +51,7 @@ export default function ThingsToDoPage() {
       <div className="flex items-center justify-center flex-wrap gap-3">
         <button
           onClick={() => setSelectedCat(null)}
-          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${!selectedCat ? 'bg-ceylon-500 text-white shadow-lg' : 'glass-card text-sand-200 hover:text-white'}`}
+          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${!selectedCat ? 'bg-ceylon-600 text-white shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
         >
           All Experiences
         </button>
@@ -59,7 +59,7 @@ export default function ThingsToDoPage() {
           <button
             key={cat.slug}
             onClick={() => setSelectedCat(cat.slug)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex items-center space-x-1.5 ${selectedCat === cat.slug ? 'bg-ceylon-500 text-white shadow-lg' : 'glass-card text-sand-200 hover:text-white'}`}
+            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex items-center space-x-1.5 ${selectedCat === cat.slug ? 'bg-ceylon-600 text-white shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
           >
             <cat.icon className="w-3.5 h-3.5" />
             <span>{cat.name}</span>
@@ -74,10 +74,10 @@ export default function ThingsToDoPage() {
           { id: 'exp-2', name: 'Open 4x4 Leopard Safari in Yala Block 1', slug: 'yala-leopard-safari', duration: 'Full Day', difficulty: 'Easy', bestSeason: 'Feb - Jul', heroImage: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', description: 'Track wild leopards, sloth bears, and mugger crocodiles with an expert naturalist tracker.' },
           { id: 'exp-3', name: 'Ancient Sigiriya Lion Rock Fortress Guided Climb', slug: 'sigiriya-fortress-climb', duration: '3 Hours', difficulty: 'Moderate', bestSeason: 'Dec - Apr', heroImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', description: 'Climb 1,200 steps past 5th-century frescoes and mirror walls to King Kashyapa’s sky palace summit.' },
         ]).map((exp: any) => (
-          <div key={exp.id} className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between h-96 group relative">
+          <div key={exp.id} className="bg-white border border-ceylon-500/20 shadow-xl shadow-ceylon-900/10 rounded-2xl overflow-hidden flex flex-col justify-between min-h-96 group relative transition hover:-translate-y-1 hover:shadow-ceylon-900/15">
             <div className="relative h-52 w-full overflow-hidden">
               <Image src={exp.heroImage} alt={exp.name} fill className="object-cover group-hover:scale-105 transition duration-500" />
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ceylon-950/80 text-[10px] uppercase font-bold text-gold-400">
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ceylon-950/85 text-[10px] uppercase font-bold text-ceylon-100">
                 {exp.duration} • {exp.difficulty || 'Easy'}
               </div>
               <button
@@ -90,19 +90,19 @@ export default function ThingsToDoPage() {
 
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="font-playfair text-xl font-bold text-white group-hover:text-ceylon-300 transition line-clamp-2">
+                <h3 className="font-playfair text-xl font-bold text-ceylon-950 group-hover:text-ceylon-600 transition line-clamp-2">
                   {exp.name}
                 </h3>
-                <p className="text-xs text-sand-200 mt-2 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-ceylon-700 mt-2 line-clamp-2 leading-relaxed">
                   {exp.description}
                 </p>
               </div>
 
               <div className="flex items-center justify-between mt-4 pt-3 border-t border-ceylon-500/10 text-xs">
-                <span className="text-sand-200/70 font-medium">Best Season: {exp.bestSeason}</span>
+                <span className="text-ceylon-700 font-medium">Best Season: {exp.bestSeason}</span>
                 <Link
                   href={`/experiences/${exp.slug}`}
-                  className="inline-flex items-center space-x-1 font-semibold text-gold-400 hover:text-gold-300 uppercase tracking-wider"
+                  className="inline-flex items-center space-x-1 font-semibold text-ceylon-600 hover:text-ceylon-800 uppercase tracking-wider"
                 >
                   <span>Explore</span>
                   <ArrowRight className="w-3.5 h-3.5" />

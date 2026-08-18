@@ -110,15 +110,15 @@ export default function WhenToVisitPage() {
   const info = MONTH_DATA[selectedMonth];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12 pb-20 text-ceylon-950">
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-xs font-bold uppercase tracking-widest text-gold-400">
+        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-600">
           Sri Lanka 365
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           When Should You Visit Sri Lanka?
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-800">
           Due to Sri Lanka’s dual monsoon system, there is always sunny weather, calm ocean waters, and wildlife safaris on one side of the island.
         </p>
       </div>
@@ -130,7 +130,7 @@ export default function WhenToVisitPage() {
             <button
               key={m}
               onClick={() => setSelectedMonth(m)}
-              className={`py-3 px-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${selectedMonth === m ? 'bg-gradient-to-r from-ceylon-500 to-teal-500 text-white shadow-xl scale-105' : 'glass-card text-sand-200 hover:text-white'}`}
+              className={`py-3 px-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${selectedMonth === m ? 'bg-gradient-to-r from-ceylon-500 to-teal-500 text-white shadow-xl scale-105' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:border-ceylon-400 hover:text-ceylon-950'}`}
             >
               {m.substring(0, 3)}
             </button>
@@ -139,53 +139,53 @@ export default function WhenToVisitPage() {
       </div>
 
       {/* Month Detail Dashboard */}
-      <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-ceylon-500/30 space-y-8 bg-ceylon-950/70">
+      <div className="bg-white p-8 sm:p-12 rounded-3xl border border-ceylon-500/20 space-y-8 shadow-2xl shadow-ceylon-950/10">
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-ceylon-500/20 pb-6 gap-4">
           <div>
-            <span className="text-xs font-bold text-gold-400 uppercase tracking-widest">Selected Month</span>
-            <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-white">{selectedMonth} in Sri Lanka</h2>
+            <span className="text-xs font-bold text-ceylon-600 uppercase tracking-widest">Selected Month</span>
+            <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-ceylon-950">{selectedMonth} in Sri Lanka</h2>
           </div>
           <Link
             href={`/trip-planner?month=${selectedMonth}`}
-            className="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-ceylon-950 font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 shadow-lg"
+            className="px-6 py-3 rounded-full bg-ceylon-600 hover:bg-ceylon-500 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 shadow-lg"
           >
             <Sparkles className="w-4 h-4" />
             <span>Generate {selectedMonth} Itinerary</span>
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sand-100">
-          <div className="glass-card p-6 rounded-2xl space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-ceylon-950">
+          <div className="bg-white border border-ceylon-500/20 p-6 rounded-2xl space-y-2 shadow-xl shadow-ceylon-950/5">
             <Waves className="w-6 h-6 text-ceylon-400" />
-            <h4 className="font-playfair text-lg font-bold text-white">Best Coastal Regions</h4>
-            <p className="text-xs text-sand-200 leading-relaxed">{info.coast}</p>
+            <h4 className="font-playfair text-lg font-bold text-ceylon-950">Best Coastal Regions</h4>
+            <p className="text-sm text-ceylon-800 leading-relaxed">{info.coast}</p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-2">
-            <Compass className="w-6 h-6 text-gold-400" />
-            <h4 className="font-playfair text-lg font-bold text-white">Highland Climate & Trekking</h4>
-            <p className="text-xs text-sand-200 leading-relaxed">{info.highlands}</p>
+          <div className="bg-white border border-ceylon-500/20 p-6 rounded-2xl space-y-2 shadow-xl shadow-ceylon-950/5">
+            <Compass className="w-6 h-6 text-ceylon-500" />
+            <h4 className="font-playfair text-lg font-bold text-ceylon-950">Highland Climate & Trekking</h4>
+            <p className="text-sm text-ceylon-800 leading-relaxed">{info.highlands}</p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-2">
+          <div className="bg-white border border-ceylon-500/20 p-6 rounded-2xl space-y-2 shadow-xl shadow-ceylon-950/5">
             <Sun className="w-6 h-6 text-emerald-400" />
-            <h4 className="font-playfair text-lg font-bold text-white">Wildlife & Safaris</h4>
-            <p className="text-xs text-sand-200 leading-relaxed">{info.wildlife}</p>
+            <h4 className="font-playfair text-lg font-bold text-ceylon-950">Wildlife & Safaris</h4>
+            <p className="text-sm text-ceylon-800 leading-relaxed">{info.wildlife}</p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-2">
+          <div className="bg-white border border-ceylon-500/20 p-6 rounded-2xl space-y-2 shadow-xl shadow-ceylon-950/5">
             <Calendar className="w-6 h-6 text-ceylon-400" />
-            <h4 className="font-playfair text-lg font-bold text-white">Cultural Events & Festivals</h4>
-            <p className="text-xs text-sand-200 leading-relaxed">{info.events}</p>
+            <h4 className="font-playfair text-lg font-bold text-ceylon-950">Cultural Events & Festivals</h4>
+            <p className="text-sm text-ceylon-800 leading-relaxed">{info.events}</p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-2 lg:col-span-2">
-            <CloudRain className="w-6 h-6 text-gold-400" />
-            <h4 className="font-playfair text-lg font-bold text-white">Weather Patterns & Summary</h4>
-            <p className="text-xs text-sand-200 leading-relaxed">{info.weather}</p>
+          <div className="bg-white border border-ceylon-500/20 p-6 rounded-2xl space-y-2 lg:col-span-2 shadow-xl shadow-ceylon-950/5">
+            <CloudRain className="w-6 h-6 text-ceylon-500" />
+            <h4 className="font-playfair text-lg font-bold text-ceylon-950">Weather Patterns & Summary</h4>
+            <p className="text-sm text-ceylon-800 leading-relaxed">{info.weather}</p>
 
             <div className="pt-4 flex flex-wrap gap-2">
-              <span className="text-xs text-sand-200 font-semibold mr-2">Top Places to Visit in {selectedMonth}:</span>
+              <span className="text-xs text-ceylon-700 font-semibold mr-2">Top Places to Visit in {selectedMonth}:</span>
               {info.recDestinations.map((d: string) => (
                 <Link
                   key={d}

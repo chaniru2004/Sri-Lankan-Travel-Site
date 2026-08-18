@@ -47,15 +47,15 @@ const SECTIONS = [
 
 export default function NatureAdventurePage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-16 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-16 pb-20 text-ceylon-950">
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
+        <span className="text-xs font-bold uppercase tracking-widest text-ceylon-600">
           Wilderness & Expeditions
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Nature & Adventure
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           From 263-meter waterfalls and UNESCO cloud mountain ridges to ocean reef diving and leopard tracking.
         </p>
       </div>
@@ -63,22 +63,22 @@ export default function NatureAdventurePage() {
       {SECTIONS.map((sec) => (
         <section key={sec.title} className="space-y-6">
           <div className="flex items-center space-x-3 border-b border-ceylon-500/20 pb-3">
-            <sec.icon className="w-6 h-6 text-ceylon-400" />
-            <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-white">{sec.title}</h2>
+            <sec.icon className="w-6 h-6 text-ceylon-600" />
+            <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-ceylon-950">{sec.title}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {sec.items.map((item) => (
-              <div key={item.name} className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between h-80">
+              <div key={item.name} className="bg-white border border-ceylon-500/20 shadow-xl shadow-ceylon-900/10 rounded-2xl overflow-hidden group flex flex-col justify-between min-h-80 transition hover:-translate-y-1 hover:shadow-ceylon-900/15">
                 <div className="relative h-44 w-full">
                   <Image src={item.image} alt={item.name} fill className="object-cover group-hover:scale-105 transition duration-500" />
                 </div>
                 <div className="p-4 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="font-playfair text-lg font-bold text-white group-hover:text-ceylon-300 transition">{item.name}</h3>
-                    <p className="text-xs text-sand-200 mt-1 line-clamp-2">{item.desc}</p>
+                    <h3 className="font-playfair text-lg font-bold text-ceylon-950 group-hover:text-ceylon-600 transition">{item.name}</h3>
+                    <p className="text-xs text-ceylon-700 mt-1 line-clamp-2">{item.desc}</p>
                   </div>
-                  <Link href={`/destinations`} className="inline-flex items-center space-x-1 text-xs font-semibold text-gold-400 hover:text-gold-300 uppercase tracking-wider mt-3">
+                  <Link href={`/destinations`} className="inline-flex items-center space-x-1 text-xs font-semibold text-ceylon-600 hover:text-ceylon-800 uppercase tracking-wider mt-3">
                     <span>Explore Route</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

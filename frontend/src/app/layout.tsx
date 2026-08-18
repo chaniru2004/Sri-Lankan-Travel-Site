@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Visit Sri Lanka',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=80',
+        url: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg',
         width: 1200,
         height: 630,
         alt: 'Sigiriya Rock Fortress Sri Lanka',

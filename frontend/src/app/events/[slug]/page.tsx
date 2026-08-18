@@ -12,7 +12,7 @@ export default function EventDetailPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-8 pb-20">
       <div className="relative h-[50vh] w-full rounded-3xl overflow-hidden glass-card">
-        <Image src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=80" alt="Event Detail" fill className="object-cover" />
+        <Image src="https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg" alt="Event Detail" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950 via-ceylon-950/30 to-transparent" />
         <div className="absolute bottom-6 left-6 right-6 space-y-2">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500 text-ceylon-950 text-xs font-bold uppercase">

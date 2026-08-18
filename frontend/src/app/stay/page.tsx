@@ -52,7 +52,7 @@ export default function StayPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {(accommodations.length > 0 ? accommodations : [
-          { id: '1', name: 'Heritance Kandalama', type: 'Eco Resort', priceRange: '$$$$', rating: 4.9, address: 'Dambulla, Cultural Triangle', heroImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', bookingUrl: 'https://booking.com' },
+          { id: '1', name: 'Heritance Kandalama', type: 'Eco Resort', priceRange: '$$$$', rating: 4.9, address: 'Dambulla, Cultural Triangle', heroImage: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', bookingUrl: 'https://booking.com' },
           { id: '2', name: 'Ceylon Tea Trails', type: 'Boutique Bungalow', priceRange: '$$$$$', rating: 5.0, address: 'Hatton, Central Highlands', heroImage: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', bookingUrl: 'https://booking.com' },
           { id: '3', name: 'Amanwella Tangalle', type: 'Ocean Beach Villa', priceRange: '$$$$$', rating: 4.8, address: 'Tangalle, Southern Coast', heroImage: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', bookingUrl: 'https://booking.com' },
         ]).map((acc: any) => (

@@ -22,7 +22,7 @@ const destinationHighlights = [
     title: 'Sigiriya Rock',
     label: 'UNESCO Heritage',
     href: '/destinations/sigiriya',
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80',
+    image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg',
   },
   {
     title: 'Ella Highlands',

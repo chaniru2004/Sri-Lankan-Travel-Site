@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { ArrowRight, Clock, Compass, Shield } from 'lucide-react';
 
 const POPULAR_ITINERARIES = [
-  { title: 'Sri Lanka in 5 Days: Express Heritage', duration: '5 Days', theme: 'Cultural & Coast', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'sri-lanka-5-days' },
+  { title: 'Sri Lanka in 5 Days: Express Heritage', duration: '5 Days', theme: 'Cultural & Coast', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'sri-lanka-5-days' },
   { title: 'Sri Lanka in 7 Days: Essential Journey', duration: '7 Days', theme: 'Highlands & Safari', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: 'sri-lanka-7-days' },
   { title: '10-Day Island Explorer Loop', duration: '10 Days', theme: 'Comprehensive', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', slug: 'sri-lanka-10-days' },
   { title: '14-Day Grand Ceylon Overland Trail', duration: '14 Days', theme: 'Complete Island', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', slug: 'sri-lanka-14-days' },
-  { title: 'Cultural Triangle 4-Day UNESCO Loop', duration: '4 Days', theme: 'Heritage', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'cultural-triangle-loop' },
+  { title: 'Cultural Triangle 4-Day UNESCO Loop', duration: '4 Days', theme: 'Heritage', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'cultural-triangle-loop' },
   { title: 'Wildlife & Safari Big-3 Expedition', duration: '6 Days', theme: 'Wild Safaris', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', slug: 'wildlife-adventure' },
   { title: 'South Coast Golden Beaches Escape', duration: '5 Days', theme: 'Beaches & Surf', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', slug: 'south-coast-escape' },
   { title: 'Honeymoon in Paradise & Private Villas', duration: '8 Days', theme: 'Luxury & Romantic', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: 'honeymoon-sri-lanka' },

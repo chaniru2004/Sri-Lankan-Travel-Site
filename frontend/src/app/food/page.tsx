@@ -6,11 +6,11 @@ import { Utensils, Flame, Coffee, Heart, ArrowRight } from 'lucide-react';
 
 const CULINARY_ITEMS = [
   { name: 'Sri Lankan Rice & 5-Curry Feast', category: 'Traditional', desc: 'Claypot slow-cooked jackfruit, spiced dhal, gotukola sambol & coconut pol sambol.', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Egg Hoppers (Appa)', category: 'Street Food', desc: 'Bowl-shaped crispy rice flour pancakes with a runny egg center & lunu miris sambol.', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80' },
+  { name: 'Egg Hoppers (Appa)', category: 'Street Food', desc: 'Bowl-shaped crispy rice flour pancakes with a runny egg center & lunu miris sambol.', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg' },
   { name: 'Cheese & Chicken Kottu Roti', category: 'Nightlife Street Food', desc: 'Shredded godamba roti chopped rhythmically on metal griddles with spices.', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80' },
   { name: 'Jaffna Fiery Crab Curry', category: 'Tamil Cuisine', desc: 'Fresh lagoon crab simmered in roasted Jaffna curry powder & drumstick leaves.', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80' },
   { name: 'Ceylon Single Origin High-Grown Tea', category: 'Highland Estate', desc: 'Hand-picked silver tips & Orange Pekoe from Nuwara Eliya misty hills.', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80' },
-  { name: 'Southern Black Pork Curry', category: 'Regional Spice', desc: 'Pork belly blackened with heavily roasted goraka (garcinia) & crushed black pepper.', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80' },
+  { name: 'Southern Black Pork Curry', category: 'Regional Spice', desc: 'Pork belly blackened with heavily roasted goraka (garcinia) & crushed black pepper.', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg' },
 ];
 
 export default function TasteSriLankaPage() {

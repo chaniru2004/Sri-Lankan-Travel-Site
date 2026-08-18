@@ -11,7 +11,7 @@ const SECTIONS = [
     items: [
       { name: 'Yala National Park', desc: 'Leopard density & coastal lagoons.', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', slug: 'yala' },
       { name: 'Wilpattu National Park', desc: 'Natural sand-rimmed lakes (Villus).', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: 'wilpattu' },
-      { name: 'Udawalawe National Park', desc: 'Guaranteed wild elephant sightings.', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'udawalawe' },
+      { name: 'Udawalawe National Park', desc: 'Guaranteed wild elephant sightings.', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'udawalawe' },
       { name: 'Minneriya Elephant Gathering', desc: 'World’s largest Asian elephant congregation.', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', slug: 'minneriya' },
     ]
   },
@@ -20,7 +20,7 @@ const SECTIONS = [
     icon: Mountain,
     items: [
       { name: 'Adam’s Peak (Sri Pada)', desc: 'Nocturnal pilgrimage to 2,243m sacred footprint.', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: 'adams-peak' },
-      { name: 'Ella Rock Trek', desc: 'Panoramic cliffside vantage overlooking Ella Gap.', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'ella-rock' },
+      { name: 'Ella Rock Trek', desc: 'Panoramic cliffside vantage overlooking Ella Gap.', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'ella-rock' },
       { name: 'Knuckles Mountain Range', desc: 'UNESCO cloud forest wilderness and river canyons.', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', slug: 'knuckles' },
       { name: 'Pidurangala Rock Sunrise', desc: '360° view directly facing Sigiriya citadel.', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', slug: 'pidurangala' },
     ]
@@ -39,7 +39,7 @@ const SECTIONS = [
     icon: Droplet,
     items: [
       { name: 'Diyaluma Falls Bathing Pools', desc: 'Multi-tiered natural cliff infinity pools.', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: 'diyaluma-falls' },
-      { name: 'Bambarakanda Waterfalls', desc: 'Sri Lanka’s tallest waterfall (263 meters).', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'bambarakanda' },
+      { name: 'Bambarakanda Waterfalls', desc: 'Sri Lanka’s tallest waterfall (263 meters).', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'bambarakanda' },
       { name: 'Ravana Falls Ella', desc: 'Cascading mountain waterfall linked to Ramayana legend.', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', slug: 'ravana-falls' },
     ]
   }

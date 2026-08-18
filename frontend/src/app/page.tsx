@@ -17,7 +17,7 @@ const WHY_SRI_LANKA_CATEGORIES = [
   {
     title: 'Culture & Heritage',
     desc: 'Explore 2,500 years of recorded history across 6 UNESCO World Heritage ancient rock citadels and cave temples.',
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80',
+    image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg',
     link: '/destinations?region=Cultural+Triangle',
   },
   {
@@ -159,7 +159,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {(destinations.length > 0 ? destinations : [
-            { id: '1', name: 'Sigiriya', slug: 'sigiriya', region: 'Cultural Triangle', heroImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', shortDescription: 'Ancient 200m rock fortress soaring above jungle canopy.' },
+            { id: '1', name: 'Sigiriya', slug: 'sigiriya', region: 'Cultural Triangle', heroImage: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', shortDescription: 'Ancient 200m rock fortress soaring above jungle canopy.' },
             { id: '2', name: 'Ella', slug: 'ella', region: 'Central Highlands', heroImage: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', shortDescription: 'Misty mountain village & Nine Arch Railway Bridge.' },
             { id: '3', name: 'Yala National Park', slug: 'yala', region: 'Wildlife Region', heroImage: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80', shortDescription: 'Highest density leopard sanctuary in Asia.' },
             { id: '4', name: 'Galle Fort', slug: 'galle', region: 'Southern Coast', heroImage: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', shortDescription: '17th-century Dutch colonial walled fort on the ocean.' },
@@ -375,7 +375,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: 'Sri Lanka in 7 Days: Essential Island', duration: '7 Days / 6 Nights', pace: 'Balanced', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80', slug: 'sri-lanka-7-days' },
+            { title: 'Sri Lanka in 7 Days: Essential Island', duration: '7 Days / 6 Nights', pace: 'Balanced', image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg', slug: 'sri-lanka-7-days' },
             { title: '10-Day Cultural Triangle & South Coast', duration: '10 Days / 9 Nights', pace: 'Comfort', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80', slug: '10-day-cultural-south' },
             { title: '14-Day Grand Ceylon Overland Expedition', duration: '14 Days / 13 Nights', pace: 'Comprehensive', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80', slug: '14-day-grand-expedition' },
           ].map((itin) => (
@@ -425,7 +425,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {(stories.length > 0 ? stories : [
             { title: 'The Ultimate Ella Guide: Nine Arch Bridge & Tea Trails', slug: 'ultimate-ella-guide', category: 'Travel Guide', readTime: '6 min read', heroImage: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80' },
-            { title: 'Sri Lanka’s Most Beautiful Train Journey: Kandy to Badulla', slug: 'scenic-train-journey', category: 'Culture', readTime: '5 min read', heroImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80' },
+            { title: 'Sri Lanka’s Most Beautiful Train Journey: Kandy to Badulla', slug: 'scenic-train-journey', category: 'Culture', readTime: '5 min read', heroImage: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg' },
             { title: 'Where to See Leopards in Sri Lanka: Yala vs Wilpattu', slug: 'leopard-safari-guide', category: 'Wildlife', readTime: '7 min read', heroImage: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80' },
           ]).map((st: any) => (
             <Link key={st.slug} href={`/stories/${st.slug}`} className="glass-card rounded-2xl overflow-hidden group">

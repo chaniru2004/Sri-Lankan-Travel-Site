@@ -53,7 +53,7 @@ const rawProvinces = [
     slug: 'northern-province',
     cue: 'Peninsula heritage',
     color: '#f43f5e',
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=900&q=80',
+    image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg',
     popularPlaces: ['Jaffna', 'Delft Island', 'Nallur Kandaswamy Kovil'],
     districts: [
       { name: 'Jaffna', famousLocations: ['Nallur Kandaswamy Kovil', 'Jaffna Fort', 'Delft Island'] },
@@ -68,7 +68,7 @@ const rawProvinces = [
     slug: 'north-central-province',
     cue: 'Ancient capitals',
     color: '#f59e0b',
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=900&q=80',
+    image: 'https://blog.bhlankatours.com/wp-content/uploads/2024/08/Explore-the-Cultural-Heritage-Historical-Tours-in-Sri-Lanka.jpg',
     popularPlaces: ['Anuradhapura', 'Polonnaruwa', 'Minneriya National Park'],
     districts: [
       { name: 'Anuradhapura', famousLocations: ['Sri Maha Bodhi', 'Ruwanwelisaya', 'Mihintale'] },

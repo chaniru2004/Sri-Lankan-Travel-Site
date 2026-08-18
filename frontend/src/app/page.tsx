@@ -6,9 +6,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   Compass, MapPin, Calendar, ArrowRight, Sun, Waves, Mountain, Utensils,
-  Heart, Sparkles, Shield, Bookmark, ChevronRight, CheckCircle2, Play, Map, Navigation
+  Heart, Sparkles, Shield, Bookmark, ChevronRight, CheckCircle2, Play
 } from 'lucide-react';
 import { HomeHero } from '@/components/home/HomeHero';
+import { ProvinceExplorer } from '@/components/map/ProvinceExplorer';
 import { api } from '@/lib/api';
 import { useSaved } from '@/app/providers';
 
@@ -56,96 +57,11 @@ const MONTHS = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const PROVINCES = [
-  {
-    name: 'Northern Province',
-    cue: 'Peninsula heritage',
-    tone: 'bg-rose-500',
-    top: '5%',
-    left: '48%',
-    places: ['Jaffna', 'Delft Island', 'Nallur Kandaswamy Kovil'],
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'North Central Province',
-    cue: 'Ancient capitals',
-    tone: 'bg-amber-500',
-    top: '30%',
-    left: '52%',
-    places: ['Anuradhapura', 'Polonnaruwa', 'Minneriya National Park'],
-    image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'North Western Province',
-    cue: 'Wild coast',
-    tone: 'bg-lime-600',
-    top: '37%',
-    left: '33%',
-    places: ['Wilpattu National Park', 'Kalpitiya', 'Kurunegala'],
-    image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Eastern Province',
-    cue: 'Surf and lagoons',
-    tone: 'bg-sky-500',
-    top: '45%',
-    left: '70%',
-    places: ['Trincomalee', 'Arugam Bay', 'Pasikudah'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Central Province',
-    cue: 'Tea country',
-    tone: 'bg-emerald-600',
-    top: '55%',
-    left: '47%',
-    places: ['Kandy', 'Sigiriya', 'Nuwara Eliya'],
-    image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Western Province',
-    cue: 'Capital coast',
-    tone: 'bg-violet-500',
-    top: '63%',
-    left: '29%',
-    places: ['Colombo', 'Negombo', 'Bentota'],
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Sabaragamuwa Province',
-    cue: 'Rainforest trails',
-    tone: 'bg-teal-600',
-    top: '70%',
-    left: '45%',
-    places: ['Udawalawe National Park', 'Ratnapura', 'Sinharaja'],
-    image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Uva Province',
-    cue: 'Mountain valleys',
-    tone: 'bg-indigo-500',
-    top: '68%',
-    left: '62%',
-    places: ['Ella', 'Badulla', 'Haputale'],
-    image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Southern Province',
-    cue: 'Forts and beaches',
-    tone: 'bg-orange-500',
-    top: '84%',
-    left: '48%',
-    places: ['Galle', 'Mirissa', 'Yala National Park'],
-    image: 'https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80',
-  },
-];
-
 export default function HomePage() {
   const [destinations, setDestinations] = useState<any[]>([]);
   const [stories, setStories] = useState<any[]>([]);
   const [events, setEvents] = useState<any[]>([]);
   const [selectedMonth, setSelectedMonth] = useState('February');
-  const [selectedProvince, setSelectedProvince] = useState(PROVINCES[4]);
   const { isSaved, toggleSave } = useSaved();
 
   useEffect(() => {
@@ -293,109 +209,7 @@ export default function HomePage() {
       {/* Province Discovery */}
       <section className="bg-white text-ceylon-950 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-center">
-            <div>
-              <span className="text-xs uppercase font-bold text-ceylon-600 tracking-widest flex items-center gap-2">
-                <Map className="w-4 h-4" /> Explore by Province
-              </span>
-              <h2 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950 mt-3 leading-tight">
-                Select a province. Find the places people remember.
-              </h2>
-              <p className="text-sm sm:text-base text-sand-800/80 mt-5 max-w-xl leading-relaxed">
-                Sri Lanka shifts quickly from sacred cities to tea valleys, surf bays, rainforest, and safari country. Pick a province to preview its signature places, then open the full destination list for that exact province.
-              </p>
-
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {PROVINCES.map((province) => (
-                  <button
-                    key={province.name}
-                    onClick={() => setSelectedProvince(province)}
-                    className={`group text-left rounded-xl border p-4 transition ${selectedProvince.name === province.name ? 'border-ceylon-700 bg-white shadow-xl shadow-ceylon-950/10' : 'border-ceylon-950/10 bg-white/60 hover:bg-white hover:border-ceylon-500/40'}`}
-                  >
-                    <span className="flex items-center justify-between gap-3">
-                      <span className="flex items-center gap-3 min-w-0">
-                        <span className={`h-3 w-3 rounded-full ${province.tone} flex-shrink-0`} />
-                        <span className="font-bold text-sm text-ceylon-950 truncate">{province.name}</span>
-                      </span>
-                      <ArrowRight className={`w-4 h-4 flex-shrink-0 transition ${selectedProvince.name === province.name ? 'text-ceylon-700 translate-x-0.5' : 'text-ceylon-950/30 group-hover:text-ceylon-700 group-hover:translate-x-0.5'}`} />
-                    </span>
-                    <span className="mt-2 block text-xs text-sand-800/70">{province.cue}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-[0.78fr_1fr] gap-6 items-stretch">
-              <div className="relative min-h-[520px] rounded-[2rem] bg-white border border-ceylon-950/10 shadow-2xl shadow-ceylon-950/10 overflow-hidden p-6">
-                <div className="absolute inset-6 rounded-full bg-ceylon-100/50 blur-3xl" />
-                <div className="relative h-full">
-                  <div className="absolute inset-x-[25%] top-4 bottom-4 rounded-[48%_52%_45%_55%/38%_42%_58%_62%] border-2 border-ceylon-950/15 bg-sand-100" />
-                  <div className="absolute inset-x-[31%] top-10 bottom-10 rounded-[52%_48%_56%_44%/40%_45%_55%_60%] bg-ceylon-50 border border-ceylon-950/10" />
-
-                  {PROVINCES.map((province) => (
-                    <button
-                      key={province.name}
-                      onClick={() => setSelectedProvince(province)}
-                      className="absolute -translate-x-1/2 -translate-y-1/2 group"
-                      style={{ top: province.top, left: province.left }}
-                      aria-label={`Select ${province.name}`}
-                    >
-                      <span className={`block h-8 w-8 rounded-full border-4 border-white shadow-lg transition ${selectedProvince.name === province.name ? `${province.tone} scale-125` : 'bg-ceylon-950/25 group-hover:bg-ceylon-700'}`} />
-                    </button>
-                  ))}
-
-                  <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-ceylon-700 text-white p-5 shadow-xl">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-[10px] uppercase tracking-widest text-ceylon-300 font-bold">Selected Province</p>
-                        <h3 className="font-playfair text-2xl font-bold mt-1">{selectedProvince.name}</h3>
-                      </div>
-                      <Navigation className="w-5 h-5 text-ceylon-100 flex-shrink-0" />
-                    </div>
-                    <p className="text-xs text-ceylon-50 mt-2">{selectedProvince.cue}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[2rem] bg-white border border-ceylon-950/10 shadow-2xl shadow-ceylon-950/10 overflow-hidden flex flex-col">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src={selectedProvince.image}
-                    alt={`${selectedProvince.name} popular places`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950/80 via-transparent to-transparent" />
-                  <div className="absolute left-5 bottom-5 right-5">
-                    <p className="text-xs uppercase tracking-widest text-ceylon-200 font-bold">Popular Places</p>
-                    <h3 className="font-playfair text-4xl font-bold text-white mt-1">{selectedProvince.name}</h3>
-                  </div>
-                </div>
-
-                <div className="p-6 flex flex-col justify-between flex-1">
-                  <div className="space-y-3">
-                    {selectedProvince.places.map((place, idx) => (
-                      <div key={place} className="flex items-center justify-between rounded-xl border border-ceylon-950/10 px-4 py-3">
-                        <span className="flex items-center gap-3">
-                          <span className="text-xs font-bold text-ceylon-500">{String(idx + 1).padStart(2, '0')}</span>
-                          <span className="font-semibold text-ceylon-950">{place}</span>
-                        </span>
-                        <MapPin className="w-4 h-4 text-ceylon-600" />
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={`/destinations?province=${encodeURIComponent(selectedProvince.name)}`}
-                    className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ceylon-700 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-ceylon-600 transition"
-                  >
-                    <span>Open Province Destinations</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProvinceExplorer compact />
         </div>
       </section>
 

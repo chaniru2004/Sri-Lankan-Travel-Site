@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Shield, MapPin, Compass, Landmark, Hotel, Calendar, BookOpen,
-  Users, Plus, Trash2, Edit3, Check, Eye
+  Users, Plus, Edit3, ImageIcon
 } from 'lucide-react';
 import { api } from '@/lib/api';
 
@@ -54,10 +54,10 @@ export default function AdminDashboardPage() {
         </div>
 
         <Link
-          href="/admin/destinations"
+          href="/admin/content"
           className="px-6 py-3 rounded-full bg-ceylon-500 hover:bg-ceylon-400 text-ceylon-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-2"
         >
-          <Plus className="w-4 h-4" /> <span>Manage Content CRUD</span>
+          <Plus className="w-4 h-4" /> <span>Manage Page Content</span>
         </Link>
       </div>
 
@@ -82,6 +82,10 @@ export default function AdminDashboardPage() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <Link href="/admin/content" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
+            <span>Manage Province Pages</span>
+            <ImageIcon className="w-4 h-4 text-ceylon-400" />
+          </Link>
           <Link href="/admin/destinations" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
             <span>Manage Destinations</span>
             <Edit3 className="w-4 h-4 text-ceylon-400" />

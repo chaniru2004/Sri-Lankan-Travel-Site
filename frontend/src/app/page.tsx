@@ -118,7 +118,7 @@ export default function HomePage() {
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950/90 via-ceylon-900/35 to-transparent p-6 flex flex-col justify-end">
-                <h3 className="font-playfair text-2xl font-bold text-white group-hover:text-ceylon-300 transition">
+                <h3 className="font-playfair text-2xl font-bold text-ceylon-950 group-hover:text-ceylon-300 transition">
                   {item.title}
                 </h3>
                 <p className="text-xs text-ceylon-50/90 mt-2 line-clamp-2 leading-relaxed">
@@ -177,7 +177,7 @@ export default function HomePage() {
                 </div>
                 <button
                   onClick={() => toggleSave('DESTINATION', dest.id)}
-                  className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(dest.id) ? 'bg-ceylon-600 text-white' : 'bg-white/85 text-ceylon-700 hover:text-ceylon-500'}`}
+                  className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(dest.id) ? 'bg-ceylon-600 text-ceylon-950' : 'bg-white/85 text-ceylon-700 hover:text-ceylon-500'}`}
                 >
                   <Bookmark className="w-4 h-4" />
                 </button>
@@ -234,7 +234,7 @@ export default function HomePage() {
               <button
                 key={m}
                 onClick={() => setSelectedMonth(m)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedMonth === m ? 'bg-ceylon-600 text-white shadow-lg' : 'bg-white text-ceylon-800 border border-ceylon-500/20 hover:bg-ceylon-50'}`}
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedMonth === m ? 'bg-ceylon-600 text-ceylon-950 shadow-lg' : 'bg-white text-ceylon-800 border border-ceylon-500/20 hover:bg-ceylon-50'}`}
               >
                 {m}
               </button>
@@ -270,7 +270,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/when-to-visit"
-                className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-ceylon-700 to-ceylon-500 text-white text-xs font-semibold uppercase tracking-wider mt-4"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-ceylon-700 to-ceylon-500 text-ceylon-950 text-xs font-semibold uppercase tracking-wider mt-4"
               >
                 <span>View Full 365 Guide</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -301,7 +301,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/map"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-ceylon-700 hover:bg-ceylon-600 text-white font-bold text-xs uppercase tracking-wider shadow-xl transition"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-ceylon-700 hover:bg-ceylon-600 text-ceylon-950 font-bold text-xs uppercase tracking-wider shadow-xl transition"
             >
               <span>Launch Full Screen Interactive Map</span>
               <ArrowRight className="w-4 h-4" />
@@ -350,7 +350,7 @@ export default function HomePage() {
 
             <Link
               href="/nature-adventure"
-              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-ceylon-600 hover:bg-ceylon-500 text-white font-semibold text-xs uppercase tracking-wider transition"
+              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-ceylon-600 hover:bg-ceylon-500 text-ceylon-950 font-semibold text-xs uppercase tracking-wider transition"
             >
               <span>Explore Wildlife Expeditions</span>
               <ArrowRight className="w-4 h-4" />
@@ -462,7 +462,7 @@ export default function HomePage() {
             <div className="pt-4">
               <Link
                 href="/trip-planner"
-                className="inline-flex items-center space-x-2 px-10 py-4 rounded-full bg-gradient-to-r from-ceylon-700 to-ceylon-500 hover:from-ceylon-600 hover:to-ceylon-400 text-white font-bold text-sm uppercase tracking-wider shadow-2xl transition transform hover:scale-105"
+                className="inline-flex items-center space-x-2 px-10 py-4 rounded-full bg-gradient-to-r from-ceylon-700 to-ceylon-500 hover:from-ceylon-600 hover:to-ceylon-400 text-ceylon-950 font-bold text-sm uppercase tracking-wider shadow-2xl transition transform hover:scale-105"
               >
                 <Sparkles className="w-5 h-5" />
                 <span>Start Trip Planning Wizard</span>

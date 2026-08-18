@@ -27,10 +27,10 @@ export default function EventsPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
           Festival Calendar
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Cultural Events & Festivals
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           Experience grand elephant processions, moonlit lantern displays, literary festivals, and international point-break surf championships.
         </p>
       </div>
@@ -53,10 +53,10 @@ export default function EventsPage() {
                 <span className="text-[10px] text-ceylon-300 font-semibold flex items-center gap-1">
                   <MapPin className="w-3 h-3" /> {ev.venue}
                 </span>
-                <h3 className="font-playfair text-xl font-bold text-white group-hover:text-ceylon-300 transition mt-1">
+                <h3 className="font-playfair text-xl font-bold text-ceylon-950 group-hover:text-ceylon-300 transition mt-1">
                   {ev.title}
                 </h3>
-                <p className="text-xs text-sand-200 mt-2 line-clamp-2">{ev.description}</p>
+                <p className="text-xs text-ceylon-700 mt-2 line-clamp-2">{ev.description}</p>
               </div>
               <Link href={`/events/${ev.slug}`} className="inline-flex items-center space-x-1 text-xs font-semibold text-gold-400 hover:text-gold-300 uppercase tracking-wider mt-4">
                 <span>Event Details</span>

@@ -27,10 +27,10 @@ export default function StoriesPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
           Editorial Magazine
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Sri Lanka Travel Stories
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           Immersive travel writing, local insider guides, photography essays, and culinary journeys across Ceylon.
         </p>
       </div>
@@ -50,11 +50,11 @@ export default function StoriesPage() {
             </div>
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <span className="text-[10px] text-sand-200/60 uppercase font-semibold">{st.readTime}</span>
-                <h3 className="font-playfair text-xl font-bold text-white group-hover:text-ceylon-300 transition mt-1 line-clamp-2">
+                <span className="text-[10px] text-ceylon-700 uppercase font-semibold">{st.readTime}</span>
+                <h3 className="font-playfair text-xl font-bold text-ceylon-950 group-hover:text-ceylon-300 transition mt-1 line-clamp-2">
                   {st.title}
                 </h3>
-                <p className="text-xs text-sand-200 mt-2 line-clamp-2 leading-relaxed">{st.summary}</p>
+                <p className="text-xs text-ceylon-700 mt-2 line-clamp-2 leading-relaxed">{st.summary}</p>
               </div>
               <div className="inline-flex items-center space-x-1 text-xs uppercase font-semibold text-gold-400 group-hover:text-gold-300 mt-4">
                 <span>Read Story</span>

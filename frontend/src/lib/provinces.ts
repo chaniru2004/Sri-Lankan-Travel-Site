@@ -1,6 +1,14 @@
+export interface FamousLocation {
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+  videoUrl?: string;
+}
+
 export interface District {
   name: string;
-  famousLocations: string[];
+  famousLocations: FamousLocation[];
 }
 
 export interface Province {
@@ -13,7 +21,33 @@ export interface Province {
   districts: District[];
 }
 
-export const provinces: Province[] = [
+export function slugifyPlace(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export function normalizeFamousLocation(
+  entry: string | Partial<FamousLocation>,
+  province: Pick<Province, 'name' | 'cue' | 'image'>,
+  districtName: string
+): FamousLocation {
+  const name = typeof entry === 'string' ? entry : entry.name || 'Untitled Place';
+  return {
+    name,
+    slug: typeof entry === 'string' ? slugifyPlace(name) : entry.slug || slugifyPlace(name),
+    description:
+      typeof entry === 'string'
+        ? `${name} is one of the memorable places in ${districtName}, ${province.name}. ${province.cue} gives this stop its own character for travelers exploring the district.`
+        : entry.description || `${name} is one of the memorable places in ${districtName}, ${province.name}.`,
+    image: typeof entry === 'string' ? province.image : entry.image || province.image,
+    videoUrl: typeof entry === 'string' ? undefined : entry.videoUrl,
+  };
+}
+
+const rawProvinces = [
   {
     name: 'Northern Province',
     slug: 'northern-province',
@@ -130,6 +164,16 @@ export const provinces: Province[] = [
     ],
   },
 ];
+
+export const provinces: Province[] = rawProvinces.map((province) => ({
+  ...province,
+  districts: province.districts.map((district) => ({
+    ...district,
+    famousLocations: district.famousLocations.map((location) =>
+      normalizeFamousLocation(location, province, district.name)
+    ),
+  })),
+}));
 
 export function getProvinceBySlug(slug: string) {
   return provinces.find((province) => province.slug === slug);

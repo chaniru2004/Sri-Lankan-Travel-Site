@@ -14,13 +14,13 @@ export default function ItineraryDetailPage() {
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400 text-gold-400 text-xs font-bold uppercase">
           Curated Sri Lanka Route
         </div>
-        <h1 className="font-playfair text-4xl font-bold text-white">7-Day Ceylon Essential Adventure</h1>
-        <p className="text-xs sm:text-sm text-sand-200">
+        <h1 className="font-playfair text-4xl font-bold text-ceylon-950">7-Day Ceylon Essential Adventure</h1>
+        <p className="text-xs sm:text-sm text-ceylon-700">
           Covering Sigiriya, Kandy, Ella, Yala safari, and Mirissa beaches with scenic train connections.
         </p>
 
         <div className="flex items-center space-x-4 pt-4 border-t border-ceylon-500/20">
-          <button onClick={() => window.print()} className="px-4 py-2 rounded-full glass-card text-xs text-white">Print Route</button>
+          <button onClick={() => window.print()} className="px-4 py-2 rounded-full glass-card text-xs text-ceylon-950">Print Route</button>
           <Link href="/trip-planner" className="px-5 py-2 rounded-full bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase">
             Customize in Trip Planner
           </Link>
@@ -42,9 +42,9 @@ export default function ItineraryDetailPage() {
               <span className="w-8 h-8 rounded-full bg-ceylon-500 text-ceylon-950 font-bold flex items-center justify-center text-xs">
                 D{d.day}
               </span>
-              <h3 className="font-playfair text-xl font-bold text-white">{d.route}</h3>
+              <h3 className="font-playfair text-xl font-bold text-ceylon-950">{d.route}</h3>
             </div>
-            <p className="text-xs text-sand-200 leading-relaxed pl-11">{d.desc}</p>
+            <p className="text-xs text-ceylon-700 leading-relaxed pl-11">{d.desc}</p>
           </div>
         ))}
       </div>

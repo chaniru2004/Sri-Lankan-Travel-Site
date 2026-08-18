@@ -130,7 +130,7 @@ export default function WhenToVisitPage() {
             <button
               key={m}
               onClick={() => setSelectedMonth(m)}
-              className={`py-3 px-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${selectedMonth === m ? 'bg-gradient-to-r from-ceylon-500 to-teal-500 text-white shadow-xl scale-105' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:border-ceylon-400 hover:text-ceylon-950'}`}
+              className={`py-3 px-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${selectedMonth === m ? 'bg-gradient-to-r from-ceylon-500 to-teal-500 text-ceylon-950 shadow-xl scale-105' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:border-ceylon-400 hover:text-ceylon-950'}`}
             >
               {m.substring(0, 3)}
             </button>
@@ -147,7 +147,7 @@ export default function WhenToVisitPage() {
           </div>
           <Link
             href={`/trip-planner?month=${selectedMonth}`}
-            className="px-6 py-3 rounded-full bg-ceylon-600 hover:bg-ceylon-500 text-white font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 shadow-lg"
+            className="px-6 py-3 rounded-full bg-ceylon-600 hover:bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 shadow-lg"
           >
             <Sparkles className="w-4 h-4" />
             <span>Generate {selectedMonth} Itinerary</span>

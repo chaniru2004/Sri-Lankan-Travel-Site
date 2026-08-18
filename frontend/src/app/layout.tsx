@@ -48,7 +48,7 @@ export default function RootLayout({
           crossOrigin=""
         />
       </head>
-      <body className="bg-ceylon-950 text-sand-200 antialiased selection:bg-ceylon-500 selection:text-white flex flex-col min-h-screen">
+      <body className="bg-ceylon-50 text-ceylon-950 antialiased selection:bg-ceylon-500 selection:text-ceylon-950 flex flex-col min-h-screen">
         <Providers>
           <Header />
           <main className="flex-grow pt-20">{children}</main>

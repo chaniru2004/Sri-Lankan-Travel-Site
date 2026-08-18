@@ -30,10 +30,10 @@ export default function StayPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
           Where to Stay
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Sri Lanka Accommodation Guide
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           From luxury cliffside ocean resorts and tea estate bungalows to jungle eco-lodges and surf hostels.
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function StayPage() {
           <button
             key={t}
             onClick={() => setSelectedType(t)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${selectedType === t ? 'bg-ceylon-500 text-white shadow-lg' : 'glass-card text-sand-200 hover:text-white'}`}
+            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${selectedType === t ? 'bg-ceylon-500 text-ceylon-950 shadow-lg' : 'glass-card text-ceylon-700 hover:text-ceylon-950'}`}
           >
             {t}
           </button>
@@ -62,17 +62,17 @@ export default function StayPage() {
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-ceylon-950/80 text-[10px] uppercase font-bold text-gold-400">
                 {acc.type} • {acc.priceRange}
               </div>
-              <div className="absolute top-3 right-3 px-2 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-bold text-white flex items-center gap-1">
+              <div className="absolute top-3 right-3 px-2 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-bold text-ceylon-950 flex items-center gap-1">
                 <Star className="w-3.5 h-3.5 text-gold-400 fill-gold-400" /> {acc.rating}
               </div>
             </div>
 
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="font-playfair text-xl font-bold text-white group-hover:text-ceylon-300 transition">
+                <h3 className="font-playfair text-xl font-bold text-ceylon-950 group-hover:text-ceylon-300 transition">
                   {acc.name}
                 </h3>
-                <p className="text-xs text-sand-200 mt-1 flex items-center gap-1">
+                <p className="text-xs text-ceylon-700 mt-1 flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-ceylon-400" /> {acc.address}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function StayPage() {
                 href={acc.bookingUrl || '#'}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full py-2.5 rounded-xl bg-ceylon-600 hover:bg-ceylon-500 text-white font-semibold text-xs text-center uppercase tracking-wider flex items-center justify-center gap-1 mt-4 transition"
+                className="w-full py-2.5 rounded-xl bg-ceylon-600 hover:bg-ceylon-500 text-ceylon-950 font-semibold text-xs text-center uppercase tracking-wider flex items-center justify-center gap-1 mt-4 transition"
               >
                 <span>Check Partner Availability</span>
                 <ExternalLink className="w-3.5 h-3.5" />

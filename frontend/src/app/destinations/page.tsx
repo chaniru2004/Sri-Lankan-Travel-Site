@@ -116,7 +116,7 @@ export default function DestinationsPage() {
             <button
               key={reg}
               onClick={() => setSelectedFilter(reg)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedFilter === reg ? 'bg-ceylon-600 text-white shadow-md shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition flex-shrink-0 ${selectedFilter === reg ? 'bg-ceylon-600 text-ceylon-950 shadow-md shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
             >
               {reg}
             </button>
@@ -127,7 +127,7 @@ export default function DestinationsPage() {
         <div className="flex items-center space-x-1 bg-ceylon-50 border border-ceylon-500/20 p-1 rounded-xl">
           <button
             onClick={() => setViewMode('grid')}
-            className={`p-2 rounded-lg text-xs font-medium flex items-center space-x-1 ${viewMode === 'grid' ? 'bg-ceylon-600 text-white' : 'text-ceylon-700 hover:text-ceylon-950'}`}
+            className={`p-2 rounded-lg text-xs font-medium flex items-center space-x-1 ${viewMode === 'grid' ? 'bg-ceylon-600 text-ceylon-950' : 'text-ceylon-700 hover:text-ceylon-950'}`}
           >
             <Grid className="w-4 h-4" />
             <span className="hidden sm:inline">Grid</span>
@@ -165,7 +165,7 @@ export default function DestinationsPage() {
                 </div>
                 <button
                   onClick={() => toggleSave('DESTINATION', dest.id)}
-                  className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(dest.id) ? 'bg-gold-500 text-ceylon-950' : 'bg-black/40 text-white hover:text-gold-400'}`}
+                  className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(dest.id) ? 'bg-gold-500 text-ceylon-950' : 'bg-black/40 text-ceylon-950 hover:text-gold-400'}`}
                 >
                   <Bookmark className="w-4 h-4" />
                 </button>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { provinces, Province } from './provinces';
+import { normalizeFamousLocation, provinces, Province } from './provinces';
 
 const PROVINCE_CMS_KEY = 'visit-sri-lanka:province-cms';
 
@@ -11,9 +11,22 @@ function cloneProvinces() {
     popularPlaces: [...province.popularPlaces],
     districts: province.districts.map((district) => ({
       ...district,
-      famousLocations: [...district.famousLocations],
+      famousLocations: district.famousLocations.map((location) => ({ ...location })),
     })),
   }));
+}
+
+function normalizeProvince(province: Province): Province {
+  return {
+    ...province,
+    popularPlaces: [...province.popularPlaces],
+    districts: province.districts.map((district) => ({
+      ...district,
+      famousLocations: district.famousLocations.map((location) =>
+        normalizeFamousLocation(location, province, district.name)
+      ),
+    })),
+  };
 }
 
 export function getCmsProvinces(): Province[] {
@@ -26,7 +39,7 @@ export function getCmsProvinces(): Province[] {
     const overrides = JSON.parse(saved) as Province[];
     return cloneProvinces().map((province) => {
       const override = overrides.find((item) => item.slug === province.slug);
-      return override ? { ...province, ...override } : province;
+      return normalizeProvince(override ? { ...province, ...override } : province);
     });
   } catch {
     return cloneProvinces();

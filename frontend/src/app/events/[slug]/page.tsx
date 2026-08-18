@@ -18,11 +18,11 @@ export default function EventDetailPage() {
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500 text-ceylon-950 text-xs font-bold uppercase">
             Official Ceylon Event
           </div>
-          <h1 className="font-playfair text-4xl sm:text-5xl font-bold text-white">Kandy Esala Perahera</h1>
+          <h1 className="font-playfair text-4xl sm:text-5xl font-bold text-ceylon-950">Kandy Esala Perahera</h1>
         </div>
       </div>
 
-      <div className="glass-panel p-8 rounded-3xl space-y-4 border border-ceylon-500/30 text-sand-200">
+      <div className="glass-panel p-8 rounded-3xl space-y-4 border border-ceylon-500/30 text-ceylon-700">
         <div className="flex items-center space-x-4 text-xs font-semibold text-ceylon-300">
           <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> August 10 - 20, 2026</span>
           <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> Temple of the Tooth Relic, Kandy</span>

@@ -20,10 +20,10 @@ export default function TasteSriLankaPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-gold-400">
           Gastronomy & Ceylon Tea
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Taste Sri Lanka
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           A vibrant spice island palette combining coconut sambols, fragrant claypot curries, midnight kottu roti, and world-renowned Ceylon tea.
         </p>
       </div>
@@ -39,10 +39,10 @@ export default function TasteSriLankaPage() {
             </div>
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <h3 className="font-playfair text-xl font-bold text-white group-hover:text-ceylon-300 transition">
+                <h3 className="font-playfair text-xl font-bold text-ceylon-950 group-hover:text-ceylon-300 transition">
                   {item.name}
                 </h3>
-                <p className="text-xs text-sand-200 mt-2 leading-relaxed">{item.desc}</p>
+                <p className="text-xs text-ceylon-700 mt-2 leading-relaxed">{item.desc}</p>
               </div>
               <Link href="/trip-planner" className="inline-flex items-center space-x-1 text-xs uppercase font-semibold text-gold-400 hover:text-gold-300 mt-4">
                 <span>Book Culinary Tour</span>

@@ -88,7 +88,7 @@ export function MegaMenu({ type, onClose }: MegaMenuProps) {
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950/85 via-ceylon-950/15 to-transparent p-5 flex flex-col justify-end">
                       <span className="text-xs font-bold uppercase tracking-widest text-ceylon-200">{item.label}</span>
-                      <span className="font-playfair text-2xl font-bold text-white">{item.title}</span>
+                      <span className="font-playfair text-2xl font-bold text-ceylon-950">{item.title}</span>
                     </div>
                   </Link>
                 ))}
@@ -137,7 +137,7 @@ export function MegaMenu({ type, onClose }: MegaMenuProps) {
                   <Link key={title} href="/things-to-do" onClick={onClose} className="group relative h-64 overflow-hidden rounded-xl">
                     <img src={image} alt={title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950/85 via-transparent to-transparent p-5 flex items-end">
-                      <span className="font-playfair text-2xl font-bold text-white">{title}</span>
+                      <span className="font-playfair text-2xl font-bold text-ceylon-950">{title}</span>
                     </div>
                   </Link>
                 ))}

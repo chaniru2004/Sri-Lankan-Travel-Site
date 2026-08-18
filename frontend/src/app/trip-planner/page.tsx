@@ -81,10 +81,10 @@ export default function TripPlannerPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-gold-400">
           Smart Travel Engine
         </span>
-        <h1 className="font-playfair text-3xl sm:text-5xl font-bold text-white">
+        <h1 className="font-playfair text-3xl sm:text-5xl font-bold text-ceylon-950">
           {step === 6 ? generatedItinerary?.title : 'Craft Your Sri Lanka Itinerary'}
         </h1>
-        <p className="text-xs sm:text-sm text-sand-200">
+        <p className="text-xs sm:text-sm text-ceylon-700">
           {step === 6 ? 'Your custom day-by-day travel plan is ready. Reorder activities, save, or print.' : `Step ${step} of 5 — Answer a few questions to generate your journey.`}
         </p>
       </div>
@@ -103,28 +103,28 @@ export default function TripPlannerPage() {
 
       {/* Step 1: Dates */}
       {step === 1 && (
-        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-sand-50">
-          <h3 className="font-playfair text-2xl font-bold text-white flex items-center gap-2">
+        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-ceylon-950">
+          <h3 className="font-playfair text-2xl font-bold text-ceylon-950 flex items-center gap-2">
             <Calendar className="w-6 h-6 text-ceylon-400" /> When are you visiting Sri Lanka?
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="block text-xs font-medium text-sand-200 mb-2">Arrival Date</label>
+              <label className="block text-xs font-medium text-ceylon-700 mb-2">Arrival Date</label>
               <input
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full bg-ceylon-950/80 border border-ceylon-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-ceylon-400"
+                className="w-full bg-ceylon-950/80 border border-ceylon-500/30 rounded-xl px-4 py-3 text-sm text-ceylon-950 focus:outline-none focus:border-ceylon-400"
               />
             </div>
             <div>
-              <label className="block text-xs font-medium text-sand-200 mb-2">Departure Date</label>
+              <label className="block text-xs font-medium text-ceylon-700 mb-2">Departure Date</label>
               <input
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full bg-ceylon-950/80 border border-ceylon-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-ceylon-400"
+                className="w-full bg-ceylon-950/80 border border-ceylon-500/30 rounded-xl px-4 py-3 text-sm text-ceylon-950 focus:outline-none focus:border-ceylon-400"
               />
             </div>
           </div>
@@ -143,8 +143,8 @@ export default function TripPlannerPage() {
 
       {/* Step 2: Travellers */}
       {step === 2 && (
-        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-sand-50">
-          <h3 className="font-playfair text-2xl font-bold text-white flex items-center gap-2">
+        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-ceylon-950">
+          <h3 className="font-playfair text-2xl font-bold text-ceylon-950 flex items-center gap-2">
             <Users className="w-6 h-6 text-gold-400" /> Who is travelling?
           </h3>
 
@@ -153,7 +153,7 @@ export default function TripPlannerPage() {
               <button
                 key={g}
                 onClick={() => setTravellersGroup(g)}
-                className={`p-5 rounded-2xl border text-center font-bold text-sm transition ${travellersGroup === g ? 'bg-ceylon-500 text-white border-ceylon-400 shadow-xl' : 'glass-card text-sand-200 border-ceylon-500/20'}`}
+                className={`p-5 rounded-2xl border text-center font-bold text-sm transition ${travellersGroup === g ? 'bg-ceylon-500 text-ceylon-950 border-ceylon-400 shadow-xl' : 'glass-card text-ceylon-700 border-ceylon-500/20'}`}
               >
                 {g}
               </button>
@@ -161,7 +161,7 @@ export default function TripPlannerPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-sand-200 mb-2">Number of Travellers: {travellersCount}</label>
+            <label className="block text-xs font-medium text-ceylon-700 mb-2">Number of Travellers: {travellersCount}</label>
             <input
               type="range"
               min="1"
@@ -173,7 +173,7 @@ export default function TripPlannerPage() {
           </div>
 
           <div className="pt-4 flex justify-between">
-            <button onClick={() => setStep(1)} className="px-6 py-3 rounded-full glass-card text-sand-200 text-xs font-semibold uppercase">Back</button>
+            <button onClick={() => setStep(1)} className="px-6 py-3 rounded-full glass-card text-ceylon-700 text-xs font-semibold uppercase">Back</button>
             <button onClick={() => setStep(3)} className="px-8 py-3 rounded-full bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase">Next: What do you love?</button>
           </div>
         </div>
@@ -181,8 +181,8 @@ export default function TripPlannerPage() {
 
       {/* Step 3: Interests */}
       {step === 3 && (
-        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-sand-50">
-          <h3 className="font-playfair text-2xl font-bold text-white flex items-center gap-2">
+        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-ceylon-950">
+          <h3 className="font-playfair text-2xl font-bold text-ceylon-950 flex items-center gap-2">
             <Heart className="w-6 h-6 text-emerald-400" /> What experiences do you love?
           </h3>
 
@@ -193,7 +193,7 @@ export default function TripPlannerPage() {
                 <button
                   key={item}
                   onClick={() => toggleInterest(item)}
-                  className={`p-4 rounded-2xl border text-left font-semibold text-xs transition flex flex-col justify-between h-28 ${active ? 'bg-ceylon-600 text-white border-ceylon-300 shadow-xl' : 'glass-card text-sand-200 border-ceylon-500/20'}`}
+                  className={`p-4 rounded-2xl border text-left font-semibold text-xs transition flex flex-col justify-between h-28 ${active ? 'bg-ceylon-600 text-ceylon-950 border-ceylon-300 shadow-xl' : 'glass-card text-ceylon-700 border-ceylon-500/20'}`}
                 >
                   <span>{item}</span>
                   {active && <CheckCircle2 className="w-4 h-4 text-gold-400 self-end" />}
@@ -203,7 +203,7 @@ export default function TripPlannerPage() {
           </div>
 
           <div className="pt-4 flex justify-between">
-            <button onClick={() => setStep(2)} className="px-6 py-3 rounded-full glass-card text-sand-200 text-xs font-semibold uppercase">Back</button>
+            <button onClick={() => setStep(2)} className="px-6 py-3 rounded-full glass-card text-ceylon-700 text-xs font-semibold uppercase">Back</button>
             <button onClick={() => setStep(4)} className="px-8 py-3 rounded-full bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase">Next: Travel Style</button>
           </div>
         </div>
@@ -211,8 +211,8 @@ export default function TripPlannerPage() {
 
       {/* Step 4: Travel Style */}
       {step === 4 && (
-        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-sand-50">
-          <h3 className="font-playfair text-2xl font-bold text-white flex items-center gap-2">
+        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-ceylon-950">
+          <h3 className="font-playfair text-2xl font-bold text-ceylon-950 flex items-center gap-2">
             <Shield className="w-6 h-6 text-gold-400" /> Select your preferred Travel Style
           </h3>
 
@@ -221,7 +221,7 @@ export default function TripPlannerPage() {
               <button
                 key={st}
                 onClick={() => setStyle(st)}
-                className={`p-5 rounded-2xl border text-center font-bold text-sm transition ${style === st ? 'bg-ceylon-500 text-white border-ceylon-400 shadow-xl' : 'glass-card text-sand-200 border-ceylon-500/20'}`}
+                className={`p-5 rounded-2xl border text-center font-bold text-sm transition ${style === st ? 'bg-ceylon-500 text-ceylon-950 border-ceylon-400 shadow-xl' : 'glass-card text-ceylon-700 border-ceylon-500/20'}`}
               >
                 {st}
               </button>
@@ -229,7 +229,7 @@ export default function TripPlannerPage() {
           </div>
 
           <div className="pt-4 flex justify-between">
-            <button onClick={() => setStep(3)} className="px-6 py-3 rounded-full glass-card text-sand-200 text-xs font-semibold uppercase">Back</button>
+            <button onClick={() => setStep(3)} className="px-6 py-3 rounded-full glass-card text-ceylon-700 text-xs font-semibold uppercase">Back</button>
             <button onClick={() => setStep(5)} className="px-8 py-3 rounded-full bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase">Next: Travel Pace</button>
           </div>
         </div>
@@ -237,8 +237,8 @@ export default function TripPlannerPage() {
 
       {/* Step 5: Travel Pace */}
       {step === 5 && (
-        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-sand-50">
-          <h3 className="font-playfair text-2xl font-bold text-white flex items-center gap-2">
+        <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6 text-ceylon-950">
+          <h3 className="font-playfair text-2xl font-bold text-ceylon-950 flex items-center gap-2">
             <Gauge className="w-6 h-6 text-ceylon-400" /> Choose your Travel Pace
           </h3>
 
@@ -247,7 +247,7 @@ export default function TripPlannerPage() {
               <button
                 key={pc}
                 onClick={() => setPace(pc)}
-                className={`p-6 rounded-2xl border text-center font-bold text-sm transition ${pace === pc ? 'bg-ceylon-500 text-white border-ceylon-400 shadow-xl' : 'glass-card text-sand-200 border-ceylon-500/20'}`}
+                className={`p-6 rounded-2xl border text-center font-bold text-sm transition ${pace === pc ? 'bg-ceylon-500 text-ceylon-950 border-ceylon-400 shadow-xl' : 'glass-card text-ceylon-700 border-ceylon-500/20'}`}
               >
                 {pc}
               </button>
@@ -255,7 +255,7 @@ export default function TripPlannerPage() {
           </div>
 
           <div className="pt-6 flex justify-between">
-            <button onClick={() => setStep(4)} className="px-6 py-3 rounded-full glass-card text-sand-200 text-xs font-semibold uppercase">Back</button>
+            <button onClick={() => setStep(4)} className="px-6 py-3 rounded-full glass-card text-ceylon-700 text-xs font-semibold uppercase">Back</button>
             <button
               onClick={handleGenerate}
               disabled={loading}
@@ -272,14 +272,14 @@ export default function TripPlannerPage() {
       {step === 6 && generatedItinerary && (
         <div className="space-y-8">
           <div className="glass-panel p-6 rounded-2xl border border-ceylon-500/30 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center space-x-3 text-xs text-sand-200">
-              <span className="px-3 py-1 rounded-full bg-ceylon-600 font-semibold text-white">{generatedItinerary.durationDays} Days</span>
+            <div className="flex items-center space-x-3 text-xs text-ceylon-700">
+              <span className="px-3 py-1 rounded-full bg-ceylon-600 font-semibold text-ceylon-950">{generatedItinerary.durationDays} Days</span>
               <span>Pace: <strong>{pace}</strong></span>
               <span>Style: <strong>{style}</strong></span>
             </div>
 
             <div className="flex items-center space-x-3">
-              <button onClick={handlePrint} className="px-4 py-2 rounded-full glass-card hover:border-gold-400 text-xs text-sand-100 flex items-center space-x-1">
+              <button onClick={handlePrint} className="px-4 py-2 rounded-full glass-card hover:border-gold-400 text-xs text-ceylon-800 flex items-center space-x-1">
                 <Printer className="w-4 h-4" /> <span>Print / PDF</span>
               </button>
               <button onClick={() => alert('Itinerary saved to your Visit Sri Lanka account!')} className="px-4 py-2 rounded-full bg-ceylon-500 text-ceylon-950 font-bold text-xs uppercase flex items-center space-x-1">
@@ -296,19 +296,19 @@ export default function TripPlannerPage() {
                     <span className="w-8 h-8 rounded-full bg-ceylon-500 flex items-center justify-center text-ceylon-950 font-bold text-xs">
                       D{d.dayNumber}
                     </span>
-                    <h3 className="font-playfair text-xl font-bold text-white">{d.title}</h3>
+                    <h3 className="font-playfair text-xl font-bold text-ceylon-950">{d.title}</h3>
                   </div>
                 </div>
 
-                <p className="text-xs text-sand-200 leading-relaxed">{d.description}</p>
+                <p className="text-xs text-ceylon-700 leading-relaxed">{d.description}</p>
 
                 {d.items?.length > 0 && (
                   <div className="space-y-2 pt-2">
                     {d.items.map((it: any, iIdx: number) => (
                       <div key={iIdx} className="glass-card p-3 rounded-xl flex items-center justify-between text-xs">
                         <div>
-                          <span className="font-semibold text-white">{it.title}</span>
-                          <span className="text-sand-200/60 ml-2">({it.activityTime})</span>
+                          <span className="font-semibold text-ceylon-950">{it.title}</span>
+                          <span className="text-ceylon-700 ml-2">({it.activityTime})</span>
                         </div>
                         <span className="text-gold-400 font-bold">{it.estimatedCost}</span>
                       </div>

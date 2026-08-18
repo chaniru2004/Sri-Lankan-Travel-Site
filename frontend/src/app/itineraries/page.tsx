@@ -22,10 +22,10 @@ export default function ItinerariesPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-ceylon-400">
           Curated Routes
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Popular Sri Lanka Itineraries
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           Browse route maps, travel times, daily activities, and budget breakdowns.
         </p>
       </div>
@@ -41,8 +41,8 @@ export default function ItinerariesPage() {
             </div>
             <div className="p-5 flex flex-col justify-between flex-1">
               <div>
-                <span className="text-[10px] text-sand-200/60 uppercase font-semibold">{it.theme}</span>
-                <h3 className="font-playfair text-lg font-bold text-white group-hover:text-ceylon-300 transition line-clamp-2 mt-1">
+                <span className="text-[10px] text-ceylon-700 uppercase font-semibold">{it.theme}</span>
+                <h3 className="font-playfair text-lg font-bold text-ceylon-950 group-hover:text-ceylon-300 transition line-clamp-2 mt-1">
                   {it.title}
                 </h3>
               </div>

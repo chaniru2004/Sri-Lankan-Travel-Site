@@ -44,13 +44,13 @@ export default function AdminDashboardPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-10 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-10 pb-20 text-ceylon-950">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-ceylon-500/20 pb-6">
         <div>
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400 text-gold-400 text-xs font-bold uppercase mb-2">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-ceylon-100 border border-ceylon-400 text-ceylon-700 text-xs font-bold uppercase mb-2">
             <Shield className="w-3.5 h-3.5" /> CMS Portal
           </div>
-          <h1 className="font-playfair text-3xl sm:text-5xl font-bold text-white">Visit Sri Lanka Content CMS</h1>
+          <h1 className="font-playfair text-3xl sm:text-5xl font-bold text-ceylon-950">Visit Sri Lanka Content CMS</h1>
         </div>
 
         <Link
@@ -64,37 +64,37 @@ export default function AdminDashboardPage() {
       {/* Metrics Counter Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
         {stats.map((s) => (
-          <div key={s.name} className="glass-panel p-6 rounded-2xl border border-ceylon-500/20 space-y-2">
+          <div key={s.name} className="bg-white p-6 rounded-2xl border border-ceylon-500/20 space-y-2 shadow-xl shadow-ceylon-900/10">
             <div className="flex items-center justify-between">
               <s.icon className={`w-6 h-6 ${s.color}`} />
-              <span className="text-2xl font-playfair font-bold text-white">{s.count}</span>
+              <span className="text-2xl font-playfair font-bold text-ceylon-950">{s.count}</span>
             </div>
-            <div className="text-xs text-sand-200 font-medium">{s.name}</div>
+            <div className="text-xs text-ceylon-700 font-medium">{s.name}</div>
           </div>
         ))}
       </div>
 
       {/* CMS Module Direct Actions */}
-      <div className="glass-panel p-8 rounded-3xl border border-ceylon-500/30 space-y-6">
-        <h3 className="font-playfair text-2xl font-bold text-white">Manage Tourism Database</h3>
-        <p className="text-xs text-sand-200">
+      <div className="bg-white p-8 rounded-3xl border border-ceylon-500/20 space-y-6 shadow-xl shadow-ceylon-900/10">
+        <h3 className="font-playfair text-2xl font-bold text-ceylon-950">Manage Tourism Database</h3>
+        <p className="text-xs text-ceylon-700">
           Create, edit, publish, draft, or archive destinations, attractions, experiences, events, stories, and accommodations.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <Link href="/admin/content" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
+          <Link href="/admin/content" className="p-4 rounded-xl border border-ceylon-500/20 bg-ceylon-50 flex items-center justify-between font-semibold text-xs text-ceylon-950 hover:border-ceylon-600/40">
             <span>Manage Province Pages</span>
             <ImageIcon className="w-4 h-4 text-ceylon-400" />
           </Link>
-          <Link href="/admin/destinations" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
+          <Link href="/admin/destinations" className="p-4 rounded-xl border border-ceylon-500/20 bg-ceylon-50 flex items-center justify-between font-semibold text-xs text-ceylon-950 hover:border-ceylon-600/40">
             <span>Manage Destinations</span>
             <Edit3 className="w-4 h-4 text-ceylon-400" />
           </Link>
-          <Link href="/admin/destinations" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
+          <Link href="/admin/destinations" className="p-4 rounded-xl border border-ceylon-500/20 bg-ceylon-50 flex items-center justify-between font-semibold text-xs text-ceylon-950 hover:border-ceylon-600/40">
             <span>Manage Attractions</span>
             <Edit3 className="w-4 h-4 text-gold-400" />
           </Link>
-          <Link href="/admin/destinations" className="p-4 rounded-xl glass-card flex items-center justify-between font-semibold text-xs text-white hover:text-ceylon-300">
+          <Link href="/admin/destinations" className="p-4 rounded-xl border border-ceylon-500/20 bg-ceylon-50 flex items-center justify-between font-semibold text-xs text-ceylon-950 hover:border-ceylon-600/40">
             <span>Manage Stories & Articles</span>
             <Edit3 className="w-4 h-4 text-emerald-400" />
           </Link>

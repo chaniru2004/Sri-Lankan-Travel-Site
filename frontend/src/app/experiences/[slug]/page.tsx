@@ -40,7 +40,7 @@ export default function ExperienceDetailPage() {
   }, [slug]);
 
   if (loading) {
-    return <div className="p-20 text-center text-sm text-sand-200">Loading Experience...</div>;
+    return <div className="p-20 text-center text-sm text-ceylon-700">Loading Experience...</div>;
   }
 
   return (
@@ -54,13 +54,13 @@ export default function ExperienceDetailPage() {
               <Clock className="w-3.5 h-3.5" />
               <span>{exp.duration} • {exp.difficulty}</span>
             </div>
-            <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white drop-shadow-lg">{exp.name}</h1>
+            <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950 drop-shadow-lg">{exp.name}</h1>
           </div>
 
           <div className="flex items-center space-x-3">
             <button
               onClick={() => toggleSave('EXPERIENCE', exp.id || 'exp-1')}
-              className="px-5 py-3 rounded-full glass-panel text-white hover:border-gold-400 font-semibold text-xs uppercase tracking-wider flex items-center space-x-2"
+              className="px-5 py-3 rounded-full glass-panel text-ceylon-950 hover:border-gold-400 font-semibold text-xs uppercase tracking-wider flex items-center space-x-2"
             >
               <Bookmark className="w-4 h-4" />
               <span>{isSaved(exp.id || 'exp-1') ? 'Saved' : 'Save Experience'}</span>
@@ -79,13 +79,13 @@ export default function ExperienceDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2 space-y-8">
           <section className="space-y-4">
-            <h2 className="font-playfair text-3xl font-bold text-white">Experience Overview</h2>
-            <p className="text-sand-200 text-base leading-relaxed">{exp.description}</p>
+            <h2 className="font-playfair text-3xl font-bold text-ceylon-950">Experience Overview</h2>
+            <p className="text-ceylon-700 text-base leading-relaxed">{exp.description}</p>
           </section>
 
           <section className="glass-panel p-6 rounded-2xl border border-ceylon-500/20 space-y-4">
-            <h3 className="font-playfair text-xl font-bold text-white">Recommended Gear & Checklist</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-sand-100">
+            <h3 className="font-playfair text-xl font-bold text-ceylon-950">Recommended Gear & Checklist</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-ceylon-800">
               <li className="flex items-center space-x-2"><CheckCircle2 className="w-4 h-4 text-ceylon-400" /><span>Sturdy trail walking shoes</span></li>
               <li className="flex items-center space-x-2"><CheckCircle2 className="w-4 h-4 text-ceylon-400" /><span>1.5L Reusable water bottle</span></li>
               <li className="flex items-center space-x-2"><CheckCircle2 className="w-4 h-4 text-ceylon-400" /><span>Sun protection & hat</span></li>
@@ -96,11 +96,11 @@ export default function ExperienceDetailPage() {
 
         <div className="space-y-6">
           <div className="glass-panel p-6 rounded-2xl border border-ceylon-500/30 space-y-4">
-            <h4 className="font-playfair text-xl font-bold text-white">Experience Highlights</h4>
-            <div className="text-xs space-y-2 text-sand-200">
-              <div><strong className="text-white">Duration:</strong> {exp.duration}</div>
-              <div><strong className="text-white">Difficulty:</strong> {exp.difficulty}</div>
-              <div><strong className="text-white">Best Season:</strong> {exp.bestSeason}</div>
+            <h4 className="font-playfair text-xl font-bold text-ceylon-950">Experience Highlights</h4>
+            <div className="text-xs space-y-2 text-ceylon-700">
+              <div><strong className="text-ceylon-950">Duration:</strong> {exp.duration}</div>
+              <div><strong className="text-ceylon-950">Difficulty:</strong> {exp.difficulty}</div>
+              <div><strong className="text-ceylon-950">Best Season:</strong> {exp.bestSeason}</div>
             </div>
             <Link
               href="/trip-planner"

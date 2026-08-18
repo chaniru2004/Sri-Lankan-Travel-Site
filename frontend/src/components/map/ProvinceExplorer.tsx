@@ -19,7 +19,7 @@ function ProvinceCard({ province, onOpen }: { province: Province; onOpen: (provi
         <div className="absolute inset-0 bg-gradient-to-t from-ceylon-950/80 via-transparent to-transparent" />
         <div className="absolute left-5 bottom-5 right-5">
           <p className="text-xs uppercase tracking-widest text-ceylon-200 font-bold">Popular Places</p>
-          <h3 className="font-playfair text-4xl font-bold text-white mt-1">{province.name}</h3>
+          <h3 className="font-playfair text-4xl font-bold text-ceylon-950 mt-1">{province.name}</h3>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ function ProvinceCard({ province, onOpen }: { province: Province; onOpen: (provi
         <button
           type="button"
           onClick={() => onOpen(province)}
-          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ceylon-700 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-ceylon-600 transition"
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-ceylon-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-ceylon-950 hover:bg-ceylon-500 transition"
         >
           <span>Open Province Details</span>
           <ArrowRight className="w-4 h-4" />
@@ -152,15 +152,15 @@ export function ProvinceExplorer({ compact = false }: { compact?: boolean }) {
             </svg>
           </div>
 
-          <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-ceylon-700 text-white p-5 shadow-xl">
+          <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-ceylon-100 text-ceylon-950 p-5 shadow-xl">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-ceylon-300 font-bold">Selected Province</p>
+                <p className="text-[10px] uppercase tracking-widest text-ceylon-700 font-bold">Selected Province</p>
                 <h3 className="font-playfair text-2xl font-bold mt-1">{activeProvince.name}</h3>
               </div>
-              <Navigation className="w-5 h-5 text-ceylon-100 flex-shrink-0" />
+              <Navigation className="w-5 h-5 text-ceylon-700 flex-shrink-0" />
             </div>
-            <p className="text-xs text-ceylon-50 mt-2">{activeProvince.cue}</p>
+            <p className="text-xs text-ceylon-700 mt-2">{activeProvince.cue}</p>
           </div>
         </div>
 

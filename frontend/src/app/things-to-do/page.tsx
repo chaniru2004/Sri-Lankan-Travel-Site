@@ -51,7 +51,7 @@ export default function ThingsToDoPage() {
       <div className="flex items-center justify-center flex-wrap gap-3">
         <button
           onClick={() => setSelectedCat(null)}
-          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${!selectedCat ? 'bg-ceylon-600 text-white shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
+          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition ${!selectedCat ? 'bg-ceylon-600 text-ceylon-950 shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
         >
           All Experiences
         </button>
@@ -59,7 +59,7 @@ export default function ThingsToDoPage() {
           <button
             key={cat.slug}
             onClick={() => setSelectedCat(cat.slug)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex items-center space-x-1.5 ${selectedCat === cat.slug ? 'bg-ceylon-600 text-white shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
+            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition flex items-center space-x-1.5 ${selectedCat === cat.slug ? 'bg-ceylon-600 text-ceylon-950 shadow-lg shadow-ceylon-900/15' : 'bg-white border border-ceylon-500/20 text-ceylon-700 hover:bg-ceylon-50 hover:text-ceylon-950'}`}
           >
             <cat.icon className="w-3.5 h-3.5" />
             <span>{cat.name}</span>
@@ -82,7 +82,7 @@ export default function ThingsToDoPage() {
               </div>
               <button
                 onClick={() => toggleSave('EXPERIENCE', exp.id)}
-                className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(exp.id) ? 'bg-gold-500 text-ceylon-950' : 'bg-black/40 text-white hover:text-gold-400'}`}
+                className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition ${isSaved(exp.id) ? 'bg-gold-500 text-ceylon-950' : 'bg-black/40 text-ceylon-950 hover:text-gold-400'}`}
               >
                 <Bookmark className="w-4 h-4" />
               </button>

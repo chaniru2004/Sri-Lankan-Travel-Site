@@ -52,10 +52,10 @@ export default function PlanYourTripPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-gold-400">
           Visitor Handbook
         </span>
-        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-white">
+        <h1 className="font-playfair text-4xl sm:text-6xl font-bold text-ceylon-950">
           Plan Your Trip to Sri Lanka
         </h1>
-        <p className="text-sm sm:text-base text-sand-200">
+        <p className="text-sm sm:text-base text-ceylon-700">
           Essential practical information on visas, currency, transport, SIM cards, health, and local temple etiquette.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function PlanYourTripPage() {
           <div key={sec.title} className="space-y-4">
             <div className="flex items-center space-x-3 border-b border-ceylon-500/20 pb-3">
               <sec.icon className="w-6 h-6 text-ceylon-400" />
-              <h2 className="font-playfair text-2xl font-bold text-white">{sec.title}</h2>
+              <h2 className="font-playfair text-2xl font-bold text-ceylon-950">{sec.title}</h2>
             </div>
 
             <div className="space-y-3">
@@ -76,13 +76,13 @@ export default function PlanYourTripPage() {
                   <div key={item.q} className="glass-card rounded-2xl overflow-hidden border border-ceylon-500/20">
                     <button
                       onClick={() => toggleAccordion(accId)}
-                      className="w-full p-5 text-left flex items-center justify-between font-semibold text-sm text-white hover:text-ceylon-300 transition"
+                      className="w-full p-5 text-left flex items-center justify-between font-semibold text-sm text-ceylon-950 hover:text-ceylon-300 transition"
                     >
                       <span>{item.q}</span>
                       <ChevronDown className={`w-5 h-5 text-gold-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-5 text-xs text-sand-200 leading-relaxed border-t border-ceylon-500/10 pt-3">
+                      <div className="px-5 pb-5 text-xs text-ceylon-700 leading-relaxed border-t border-ceylon-500/10 pt-3">
                         {item.a}
                       </div>
                     )}

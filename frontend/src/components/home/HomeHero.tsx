@@ -18,14 +18,19 @@ export function HomeHero() {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image / Video Fallback */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-10000"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=2000&q=90')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-ceylon-950/20 to-white/35" />
+      {/* Background Video */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          className="h-full w-full object-cover"
+          src="/videos/hero-background.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/35 to-white/20" />
       </div>
 
       {/* Hero Content */}
